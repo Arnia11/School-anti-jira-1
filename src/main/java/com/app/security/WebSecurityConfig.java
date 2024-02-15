@@ -25,7 +25,7 @@ public class WebSecurityConfig {
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
-        DaoAuthenticationProvider provider =  new DaoAuthenticationProvider();
+        DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setPasswordEncoder(passwordEncoder());
         provider.setUserDetailsService(userDetailsService());
 
@@ -34,10 +34,16 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests()
+        http.authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/registration").permitAll()
+                        .anyRequest().authenticated())
+                .formLogin(form -> form.loginPage("/login").permitAll());
+
+        return http.build();
     }
-
-
-
-
 }
+
+
+
+
+
