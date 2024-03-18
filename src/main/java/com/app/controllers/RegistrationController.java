@@ -23,9 +23,9 @@ public class RegistrationController {
     @PostMapping("/registration")
     public String storeNewUser(@ModelAttribute User user, Model model) {
         userServices.storeNewUser(user);
-    model.addAttribute("firstName", user.getFirstName());
-    model.addAttribute("lastName", user.getLastName());
-    return "successRegistration";
+        model.addAttribute("firstName", user.getFirstName());
+        model.addAttribute("lastName", user.getLastName());
+        return "successRegistration";
     }
 
     @GetMapping("/login")

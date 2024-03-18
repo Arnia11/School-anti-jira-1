@@ -5,19 +5,11 @@ public class Ticket {
     private long id;
     private String summary;
     private String description;
-    private long statusId;
-    private long reporterId;
-    private long assigneId;
+    // private long reporterId;
+    private User user;
     private long projectId;
-    private String type;
-    private long sprintID;
-    private long labelId;
 
-
-    //--------GETTERS/SETTERS-------
-
-
-    public long getId() {
+    public long getID() {
         return id;
     }
 
@@ -41,28 +33,20 @@ public class Ticket {
         this.description = description;
     }
 
-    public long getStatusId() {
-        return statusId;
+    //    public long getReporterId() {
+    //        return reporterId;
+    //    }
+    //
+    //    public void setReporterId(long reporterId) {
+    //        this.reporterId = reporterId;
+    //    }
+
+    public User getUser() {
+        return user;
     }
 
-    public void setStatusId(long statusId) {
-        this.statusId = statusId;
-    }
-
-    public long getReporterId() {
-        return reporterId;
-    }
-
-    public void setReporterId(long reporterId) {
-        this.reporterId = reporterId;
-    }
-
-    public long getAssigneId() {
-        return assigneId;
-    }
-
-    public void setAssigneId(long assigneId) {
-        this.assigneId = assigneId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public long getProjectId() {
@@ -73,27 +57,19 @@ public class Ticket {
         this.projectId = projectId;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public long getSprintID() {
-        return sprintID;
-    }
-
-    public void setSprintID(long sprintID) {
-        this.sprintID = sprintID;
-    }
-
-    public long getLabelId() {
-        return labelId;
-    }
-
-    public void setLabelId(long labelId) {
-        this.labelId = labelId;
-    }
 }
+
+
+
+   // private long assigneId;
+   // private long projectId;
+    //private String type;
+   // private long sprintID;
+    //private long labelId;
+
+
+    //--------GETTERS/SETTERS-------
+
+
+
+
